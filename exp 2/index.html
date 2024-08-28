@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Expense Tracker</h1>
+        <h3>Manage and track your income and expenses</h3>
+    </header>
+
+    <div class="summary">
+        <h1>Summary</h1>
+        <p>Total Income: <span id="updatedInc">0</span></p>
+        <p>Total Expenses: <span id="updatedExp">0</span></p>
+        <p>Balance: <span id="updatedBal">0</span></p>
+        <div class="chart-container">
+            <canvas id="incomePieChart"></canvas>
+        </div>
+    </div>
+
+    <div class="root">
+        <h2>Add New Item</h2>
+        <div class="inputs">
+            <div class="inputitem">
+                <label for="name">Name:</label>
+                <input type="text" id="name">
+            </div>
+            <div class="inputitem">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount">
+            </div>
+            <div class="inputitem">
+                <label for="itemType">Type:</label>
+                <select id="itemType">
+                    <option value="0">Expense</option>
+                    <option value="1">Income</option>
+                </select>
+            </div>
+            <button id="addItemButton">Add Item</button>
+        </div>
+        <table id="table">
+            <thead>
+                <tr class="titles">
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Amount</th>
+                    <th>Type</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Entries will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="save">
+        <h2>Save/Load Data</h2>
+        <div class="inputs">
+            <div class="inputitem">
+                <label for="month">Select Month:</label>
+                <select id="month">
+                    <!-- Options will be dynamically inserted here -->
+                </select>
+            </div>
+            <button id="saveButton">Save Data</button>
+            <button id="loadButton">Load Data</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
